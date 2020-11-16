@@ -1,6 +1,6 @@
 package com.pv.screendata.objects
 
-data class Color(
+data class SomeColor(
     val red: Int,
     val green: Int,
     val blue: Int,

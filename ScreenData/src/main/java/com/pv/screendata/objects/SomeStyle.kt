@@ -1,7 +1,6 @@
 package com.pv.screendata.objects
 
-data class Style(
-    val backgroundColor: Color?,
+data class SomeStyle(
+    val backgroundColor: SomeColor?,
     val isHidden: Boolean
 )
-

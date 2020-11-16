@@ -2,12 +2,12 @@ package com.pv.screendata.viewsamples
 
 import androidx.compose.runtime.Composable
 import androidx.ui.tooling.preview.Preview
-import com.pv.screendata.views.LabeledImage
+import com.pv.screendata.views.SomeLabeledImage
 
 // Todo : Not implemented
 
 @Composable
-fun SDLabeledImage(labeledImage: LabeledImage) {
+fun SDLabeledImage(labeledImage: SomeLabeledImage) {
 
 }
 

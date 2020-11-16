@@ -2,18 +2,15 @@ package com.pv.screendata.viewsamples
 
 import androidx.compose.foundation.Text
 import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.Row
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.unit.TextUnit
 import androidx.compose.ui.unit.sp
 import androidx.ui.tooling.preview.Preview
-import com.pv.screendata.objects.SomeView
-import com.pv.screendata.views.Label
+import com.pv.screendata.views.SomeLabel
 
 @Composable
-fun SDLabel(label: Label) {
+fun SDLabel(label: SomeLabel) {
     Column {
-        Text(text = label.title)
+        Text(text = label.title, fontSize = 16.sp)
         label.subtitle?.let {
             Text(text = it, fontSize = 12.sp)
         }
@@ -28,7 +25,7 @@ fun sdLabelPreview() {
 
 object SDLabel {
 
-    val mock = Label(
+    val mock = SomeLabel(
         id = "sdLabelId",
         title = "Just the main Title",
         subtitle = "Just a subtitle",

@@ -2,17 +2,17 @@ package com.pv.screendata.viewsamples
 
 import androidx.compose.foundation.ScrollableColumn
 import androidx.compose.foundation.ScrollableRow
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Modifier
 import androidx.ui.tooling.preview.Preview
 import com.pv.screendata.SDSomeView
 import com.pv.screendata.extensions.toSomeView
-import com.pv.screendata.objects.SomeView
 import com.pv.screendata.types.ViewDirectionAxis
-import com.pv.screendata.types.ViewType
-import com.pv.screendata.views.ContainerView
+import com.pv.screendata.views.SomeContainerView
 
 @Composable
-fun SDContainerView(containerView: ContainerView) {
+fun SDContainerView(containerView: SomeContainerView) {
     val content = @Composable {
         containerView.views.forEach {
             SDSomeView(someView = it)
@@ -20,10 +20,10 @@ fun SDContainerView(containerView: ContainerView) {
     }
 
     when (containerView.axis) {
-        ViewDirectionAxis.horizontal -> ScrollableRow {
+        ViewDirectionAxis.horizontal -> ScrollableRow(modifier = Modifier.fillMaxWidth()) {
             content()
         }
-        ViewDirectionAxis.vertical -> ScrollableColumn {
+        ViewDirectionAxis.vertical -> ScrollableColumn(modifier = Modifier.fillMaxWidth()) {
             content()
         }
     }
@@ -38,7 +38,7 @@ fun sdContainerViewPreview() {
 object SDContainerViewDemo {
 
     val containerMock = { axis: ViewDirectionAxis ->
-        ContainerView(
+        SomeContainerView(
             id = "someContainerId",
             axis = axis,
             views = arrayOf(

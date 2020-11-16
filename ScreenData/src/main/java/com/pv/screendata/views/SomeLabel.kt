@@ -1,16 +1,15 @@
 package com.pv.screendata.views
 
 import com.pv.screendata.objects.Destination
-import com.pv.screendata.objects.Style
+import com.pv.screendata.objects.SomeStyle
 import com.pv.screendata.types.ViewType
 
-data class LabeledImage(
+data class SomeLabel(
     val id: String?,
     val title: String,
     val subtitle: String?,
-    val image: Image,
-    val style: Style?,
+    val style: SomeStyle?,
     val destination: Destination?
 ) {
-    val type: ViewType = ViewType.labeledImage
+    val type: ViewType = ViewType.label
 }
