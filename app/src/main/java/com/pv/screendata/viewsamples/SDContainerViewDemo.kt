@@ -32,11 +32,12 @@ fun SDContainerView(containerView: ContainerView) {
 @Preview
 @Composable
 fun sdContainerViewPreview() {
+    SDContainerView(containerView = SDContainerViewDemo.containerMock(ViewDirectionAxis.vertical))
 }
 
 object SDContainerViewDemo {
 
-    private val containerMock = { axis: ViewDirectionAxis ->
+    val containerMock = { axis: ViewDirectionAxis ->
         ContainerView(
             id = "someContainerId",
             axis = axis,
@@ -44,24 +45,6 @@ object SDContainerViewDemo {
                 SDLabel.mock.toSomeView(),
                 SDLabel.mock.toSomeView(),
                 SDLabel.mock.toSomeView()
-            ),
-            style = null
-        )
-    }
-
-    val mock = { axis: ViewDirectionAxis ->
-        ContainerView(
-            id = "someContainerViewId",
-            axis = ViewDirectionAxis.vertical,
-            views = arrayOf(
-                SomeView(
-                    type = ViewType.container,
-                    container = containerMock(axis),
-                    image = null,
-                    label = null,
-                    labeledImage = null,
-                    view = null
-                )
             ),
             style = null
         )

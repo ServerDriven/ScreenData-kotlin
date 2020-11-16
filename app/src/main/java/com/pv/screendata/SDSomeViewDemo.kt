@@ -12,33 +12,24 @@ import androidx.ui.tooling.preview.Preview
 import com.pv.screendata.objects.SomeView
 import com.pv.screendata.types.ViewDirectionAxis
 import com.pv.screendata.types.ViewType
+import com.pv.screendata.viewsamples.*
+
+// Todo : find safe fallback on those labels
 
 @Composable
 fun SDSomeView(someView: SomeView) {
     when (someView.type) {
         ViewType.label -> {
-            Text(text = someView.label?.title ?: "fallback")
+            SDLabel(label = someView.label!!)
         }
         ViewType.image -> {
-            Text(text = "A sad image")
+            SDImage(image = someView.image!!)
         }
         ViewType.labeledImage -> {
-            Text(text = "A sad labeled image")
+            SDLabeledImage(labeledImage = someView.labeledImage!!)
         }
         ViewType.container -> {
-            val content = @Composable {
-                (0..4).forEach {
-                    Text(text = "monkaW")
-                }
-            }
-            when (someView.container?.axis) {
-                ViewDirectionAxis.horizontal -> ScrollableRow {
-                    content()
-                }
-                else -> ScrollableColumn {
-                    content()
-                }
-            }
+            SDContainerView(containerView = someView.container!!)
         }
         ViewType.custom -> {
             Text(text = "Will link to a custom")
@@ -56,7 +47,7 @@ object SDSomeViewDemo {
 
     val mock = SomeView(
         type = ViewType.container,
-        null,
+        container = SDContainerViewDemo.containerMock(ViewDirectionAxis.vertical),
         null,
         null,
         null,
