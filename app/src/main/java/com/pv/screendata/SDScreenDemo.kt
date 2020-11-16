@@ -30,7 +30,7 @@ fun SDSCreen(screen: SomeScreen) {
             })
         },
     ) {
-        SDSomeView(someView = screen.view)
+        SDSomeView(someView = screen.someView)
     }
 }
 
@@ -49,16 +49,16 @@ fun sdScreenPreview() {
                 1
             ),
             headerView = null,
-            view = SomeContainerView(
+            someView = SomeContainerView(
                 id = null,
                 axis = ViewDirectionAxis.vertical,
-                views = arrayOf(
+                someViews = arrayOf(
                     "monkaW".toSomeLabel().toSomeView(),
                     "pogs".toSomeLabel().toSomeView(),
                     Pair("Something", "Worse").toSomeLabel().toSomeView(),
                     "Pogs".toSomeLabel().toSomeView()
                 ),
-                style = null
+                someStyle = null
             ).toSomeView(),
             footerView = null
         )

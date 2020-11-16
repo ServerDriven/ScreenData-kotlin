@@ -11,6 +11,6 @@ data class SomeScreen(
     val subtitle: String?,
     val backgroundColor: SomeColor,
     val headerView: SomeView?,
-    val view: SomeView,
+    val someView: SomeView,
     val footerView: SomeView?
 )

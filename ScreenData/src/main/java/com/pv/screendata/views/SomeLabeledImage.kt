@@ -8,8 +8,8 @@ data class SomeLabeledImage(
     val id: String?,
     val title: String,
     val subtitle: String?,
-    val image: SomeImage,
-    val style: SomeStyle?,
+    val someImage: SomeImage,
+    val someStyle: SomeStyle?,
     val destination: Destination?
 ) {
     val type: ViewType = ViewType.labeledImage

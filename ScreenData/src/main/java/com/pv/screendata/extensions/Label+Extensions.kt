@@ -7,10 +7,10 @@ import com.pv.screendata.views.SomeLabel
 fun SomeLabel.toSomeView(): SomeView = SomeView(
     type = ViewType.label,
     container = null,
-    image = null,
-    label = this,
-    labeledImage = null,
-    view = null
+    someImage = null,
+    someLabel = this,
+    someLabeledImage = null,
+    someCustomView = null
 )
 
 fun String.toSomeLabel(): SomeLabel = SomeLabel(

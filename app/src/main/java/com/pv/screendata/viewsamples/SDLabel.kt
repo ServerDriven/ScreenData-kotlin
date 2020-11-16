@@ -29,7 +29,7 @@ object SDLabel {
         id = "sdLabelId",
         title = "Just the main Title",
         subtitle = "Just a subtitle",
-        style = null,
+        someStyle = null,
         destination = null
     )
 }

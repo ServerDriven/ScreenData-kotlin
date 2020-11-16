@@ -8,7 +8,7 @@ data class SomeLabel(
     val id: String?,
     val title: String,
     val subtitle: String?,
-    val style: SomeStyle?,
+    val someStyle: SomeStyle?,
     val destination: Destination?
 ) {
     val type: ViewType = ViewType.label

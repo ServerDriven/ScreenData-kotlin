@@ -14,7 +14,7 @@ import com.pv.screendata.views.SomeContainerView
 @Composable
 fun SDContainerView(containerView: SomeContainerView) {
     val content = @Composable {
-        containerView.views.forEach {
+        containerView.someViews.forEach {
             SDSomeView(someView = it)
         }
     }
@@ -41,12 +41,12 @@ object SDContainerViewDemo {
         SomeContainerView(
             id = "someContainerId",
             axis = axis,
-            views = arrayOf(
+            someViews = arrayOf(
                 SDLabel.mock.toSomeView(),
                 SDLabel.mock.toSomeView(),
                 SDLabel.mock.toSomeView()
             ),
-            style = null
+            someStyle = null
         )
     }
 }

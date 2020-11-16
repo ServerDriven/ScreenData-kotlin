@@ -10,11 +10,11 @@ data class SomeCustomView(
     val id: String?,
     val title: String,
     val subtitle: String?,
-    val style: SomeStyle?,
-    val image: SomeImage?,
+    val someStyle: SomeStyle?,
+    val someImage: SomeImage?,
     val destination: Destination?,
     val axis: ViewDirectionAxis,
-    val views: Array<SomeView>
+    val someViews: Array<SomeView>
 ) {
     val type: ViewType = ViewType.custom
 }

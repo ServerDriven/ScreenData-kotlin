@@ -7,7 +7,7 @@ import com.pv.screendata.types.ViewType
 data class SomeImage(
     val id: String?,
     val url: String,
-    val style: SomeStyle?,
+    val someStyle: SomeStyle?,
     val destination: Destination?
 ) {
     val type: ViewType = ViewType.image

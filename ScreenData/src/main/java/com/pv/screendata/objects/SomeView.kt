@@ -9,8 +9,8 @@ data class SomeView(
     val type: ViewType,
 
     val container: SomeContainerView?,
-    val image: SomeImage?,
-    val label: SomeLabel?,
-    val labeledImage: SomeLabeledImage?,
-    val view: SomeCustomView?
+    val someImage: SomeImage?,
+    val someLabel: SomeLabel?,
+    val someLabeledImage: SomeLabeledImage?,
+    val someCustomView: SomeCustomView?
 )

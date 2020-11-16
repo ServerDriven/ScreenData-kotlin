@@ -1,13 +1,7 @@
 package com.pv.screendata
 
-import androidx.compose.foundation.Image
-import androidx.compose.foundation.ScrollableColumn
-import androidx.compose.foundation.ScrollableRow
 import androidx.compose.foundation.Text
-import androidx.compose.material.ListItem
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.graphics.ImageAsset
-import androidx.compose.ui.res.stringResource
 import androidx.ui.tooling.preview.Preview
 import com.pv.screendata.objects.SomeView
 import com.pv.screendata.types.ViewDirectionAxis
@@ -20,13 +14,13 @@ import com.pv.screendata.viewsamples.*
 fun SDSomeView(someView: SomeView) {
     when (someView.type) {
         ViewType.label -> {
-            SDLabel(label = someView.label!!)
+            SDLabel(label = someView.someLabel!!)
         }
         ViewType.image -> {
-            SDImage(image = someView.image!!)
+            SDImage(image = someView.someImage!!)
         }
         ViewType.labeledImage -> {
-            SDLabeledImage(labeledImage = someView.labeledImage!!)
+            SDLabeledImage(labeledImage = someView.someLabeledImage!!)
         }
         ViewType.container -> {
             SDContainerView(containerView = someView.container!!)
