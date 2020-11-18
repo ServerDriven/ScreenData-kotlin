@@ -43,10 +43,10 @@ fun sdScreenPreview() {
             title = "YoloTitile",
             subtitle = null,
             backgroundColor = SomeColor(
-                0,
-                188,
-                212,
-                1
+                0f,
+                188f,
+                212f,
+                1f
             ),
             headerView = null,
             someView = SomeContainerView(

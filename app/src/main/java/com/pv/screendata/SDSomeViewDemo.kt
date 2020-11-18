@@ -23,15 +23,21 @@ fun SDSomeView(someView: SomeView) {
             SDLabeledImage(labeledImage = someView.someLabeledImage!!)
         }
         ViewType.container -> {
-            SDContainerView(containerView = someView.container!!)
+            SDContainerView(containerView = someView.someContainer!!)
         }
         ViewType.custom -> {
             Text(text = "Will link to a custom")
         }
+        ViewType.text -> {
+            Text(text = someView.someText!!.title)
+        }
+        ViewType.button -> {
+            Text(text = someView.someText!!.title)
+        }
     }
 }
 
-@Preview
+@Preview(showBackground = true)
 @Composable
 fun sdSomeViewPreview() {
     SDSomeView(someView = SDSomeViewDemo.mock)
@@ -41,10 +47,12 @@ object SDSomeViewDemo {
 
     val mock = SomeView(
         type = ViewType.container,
-        container = SDContainerViewDemo.containerMock(ViewDirectionAxis.vertical),
-        null,
-        null,
-        null,
-        null
+        someContainer = SDContainerViewDemo.containerMock(ViewDirectionAxis.vertical),
+        someText = null,
+        someButton = null,
+        someImage = null,
+        someLabel = null,
+        someLabeledImage = null,
+        someCustomView = null
     )
 }

@@ -8,7 +8,9 @@ import com.pv.screendata.views.*
 data class SomeView(
     val type: ViewType,
 
-    val container: SomeContainerView?,
+    val someText: SomeText?,
+    val someButton: SomeButton?,
+    val someContainer: SomeContainerView?,
     val someImage: SomeImage?,
     val someLabel: SomeLabel?,
     val someLabeledImage: SomeLabeledImage?,

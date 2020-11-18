@@ -6,9 +6,11 @@ import com.pv.screendata.views.SomeContainerView
 
 fun SomeContainerView.toSomeView(): SomeView = SomeView(
     type = ViewType.container,
-    container = this,
+    someContainer = this,
     someImage = null,
     someLabel = null,
     someLabeledImage = null,
-    someCustomView = null
+    someCustomView = null,
+    someText = null,
+    someButton = null
 )
