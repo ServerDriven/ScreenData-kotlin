@@ -11,29 +11,27 @@ import com.pv.screendata.viewsamples.*
 // Todo : find safe fallback on those labels
 
 @Composable
-fun SDSomeView(someView: SomeView) {
-    when (someView.type) {
-        ViewType.label -> {
-            SDLabel(label = someView.someLabel!!)
-        }
-        ViewType.image -> {
-            SDImage(image = someView.someImage!!)
-        }
-        ViewType.labeledImage -> {
-            SDLabeledImage(labeledImage = someView.someLabeledImage!!)
-        }
-        ViewType.container -> {
-            SDContainerView(containerView = someView.someContainer!!)
-        }
-        ViewType.custom -> {
-            Text(text = "Will link to a custom")
-        }
-        ViewType.text -> {
-            Text(text = someView.someText!!.title)
-        }
-        ViewType.button -> {
-            Text(text = someView.someText!!.title)
-        }
+fun SDSomeView(someView: SomeView) = when (someView.type) {
+    ViewType.label -> {
+        SDLabel(label = someView.someLabel!!)
+    }
+    ViewType.image -> {
+        SDImage(image = someView.someImage!!)
+    }
+    ViewType.labeledImage -> {
+        SDLabeledImage(labeledImage = someView.someLabeledImage!!)
+    }
+    ViewType.container -> {
+        SDContainerView(containerView = someView.someContainer!!)
+    }
+    ViewType.custom -> {
+        Text(text = "Will link to a custom")
+    }
+    ViewType.text -> {
+        Text(text = someView.someText!!.title)
+    }
+    ViewType.button -> {
+        SDButton(someButton = someView.someButton!!)
     }
 }
 
