@@ -6,10 +6,10 @@ import com.pv.screendata.types.ViewDirectionAxis
 import com.pv.screendata.types.ViewType
 
 data class SomeContainerView(
-    val id: String?,
+    val id: String? = null,
     val axis: ViewDirectionAxis,
     val someViews: Array<SomeView>,
-    val someStyle: SomeStyle?
+    val someStyle: SomeStyle? = null
 ) {
     val type: ViewType = ViewType.container
 }
