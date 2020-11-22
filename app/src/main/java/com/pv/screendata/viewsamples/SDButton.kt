@@ -21,20 +21,20 @@ fun SDButton(someButton: SomeButton) {
 
     val cbModifier = Modifier.fillMaxWidth() +
             Modifier.padding(
-                start = someButton.style?.paddingStart?.dp ?: 0.dp,
-                end = someButton.style?.paddingEnd?.dp ?: 0.dp
+                start = someButton.someStyle?.paddingStart?.dp ?: 0.dp,
+                end = someButton.someStyle?.paddingEnd?.dp ?: 0.dp
             )
 
     TextButton(
         onClick = {},
         cbModifier,
-        shape = RoundedCornerShape(someButton.style?.cornerRadius?.dp ?: 2.dp),
-        backgroundColor = someButton.style?.backgroundColor?.toComposeColor() ?: Color.White
+        shape = RoundedCornerShape(someButton.someStyle?.cornerRadius?.dp ?: 2.dp),
+        backgroundColor = someButton.someStyle?.backgroundColor?.toComposeColor() ?: Color.White
     ) {
         Text(
             text = someButton.title,
             textAlign = TextAlign.Center,
-            color = someButton.style?.foregroundColor?.toComposeColor() ?: Color.Black
+            color = someButton.someStyle?.foregroundColor?.toComposeColor() ?: Color.Black
         )
     }
 
@@ -54,7 +54,7 @@ object SDButton {
         actionId = null,
         title = "clieck meh mmooo",
         destination = null,
-        style = SomeStyle(
+        someStyle = SomeStyle(
             backgroundColor = SomeColor(
                 1f,
                 152f / 255f,
