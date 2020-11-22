@@ -33,6 +33,9 @@ fun SDSomeView(someView: SomeView) = when (someView.type) {
     ViewType.button -> {
         SDButton(someButton = someView.someButton!!)
     }
+    ViewType.spacer -> {
+        SDSpacer(someSpacer = someView.someSpacer!!)
+    }
 }
 
 @Preview(showBackground = true)

@@ -2,9 +2,8 @@ package com.pv.screendata.viewsamples
 
 import androidx.compose.foundation.Text
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material.Card
-import androidx.compose.material.OutlinedButton
 import androidx.compose.material.TextButton
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
@@ -20,9 +19,15 @@ import com.pv.screendata.views.SomeButton
 @Composable
 fun SDButton(someButton: SomeButton) {
 
+    val cbModifier = Modifier.fillMaxWidth() +
+            Modifier.padding(
+                start = someButton.style?.paddingStart?.dp ?: 0.dp,
+                end = someButton.style?.paddingEnd?.dp ?: 0.dp
+            )
+
     TextButton(
         onClick = {},
-        Modifier.fillMaxWidth(),
+        cbModifier,
         shape = RoundedCornerShape(someButton.style?.cornerRadius?.dp ?: 2.dp),
         backgroundColor = someButton.style?.backgroundColor?.toComposeColor() ?: Color.White
     ) {
