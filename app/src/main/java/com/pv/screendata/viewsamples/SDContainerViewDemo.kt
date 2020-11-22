@@ -20,10 +20,14 @@ fun SDContainerView(containerView: SomeContainerView) {
     }
 
     when (containerView.axis) {
-        ViewDirectionAxis.horizontal -> ScrollableRow(modifier = Modifier.fillMaxWidth()) {
+        ViewDirectionAxis.horizontal -> ScrollableRow(
+            modifier = Modifier.fillMaxWidth(),
+        ) {
             content()
         }
-        ViewDirectionAxis.vertical -> ScrollableColumn(modifier = Modifier.fillMaxWidth()) {
+        ViewDirectionAxis.vertical -> ScrollableColumn(
+            modifier = Modifier.fillMaxWidth(),
+        ) {
             content()
         }
     }
