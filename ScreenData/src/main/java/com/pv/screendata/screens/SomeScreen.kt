@@ -3,8 +3,6 @@ package com.pv.screendata.screens
 import com.pv.screendata.objects.SomeColor
 import com.pv.screendata.objects.SomeView
 
-// should view just be container view ? What screen would have a label ?
-
 data class SomeScreen(
     val id: String? = null,
     val title: String,
