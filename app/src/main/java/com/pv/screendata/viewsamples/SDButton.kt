@@ -1,9 +1,11 @@
 package com.pv.screendata.viewsamples
 
-import androidx.compose.foundation.Text
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material.ButtonColors
+import androidx.compose.material.ButtonConstants
+import androidx.compose.material.Text
 import androidx.compose.material.TextButton
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
@@ -29,7 +31,9 @@ fun SDButton(someButton: SomeButton) {
         onClick = {},
         cbModifier,
         shape = RoundedCornerShape(someButton.someStyle?.cornerRadius?.dp ?: 2.dp),
-        backgroundColor = someButton.someStyle?.backgroundColor?.toComposeColor() ?: Color.White
+        colors = ButtonConstants.defaultButtonColors(
+            backgroundColor = someButton.someStyle?.backgroundColor?.toComposeColor() ?: Color.White
+        )
     ) {
         Text(
             text = someButton.title,
