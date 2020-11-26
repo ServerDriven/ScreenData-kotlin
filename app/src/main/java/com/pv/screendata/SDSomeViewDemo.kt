@@ -2,6 +2,8 @@ package com.pv.screendata
 
 import androidx.compose.foundation.Text
 import androidx.compose.runtime.Composable
+import androidx.navigation.NavController
+import androidx.navigation.NavHostController
 import androidx.ui.tooling.preview.Preview
 import com.pv.screendata.objects.SomeView
 import com.pv.screendata.types.ViewDirectionAxis
@@ -11,7 +13,10 @@ import com.pv.screendata.viewsamples.*
 // Todo : find safe fallback on those labels
 
 @Composable
-fun SDSomeView(someView: SomeView) = when (someView.type) {
+fun SDSomeView(
+    someView: SomeView,
+    navController: NavController? = null
+) = when (someView.type) {
     ViewType.label -> {
         SDLabel(label = someView.someLabel!!)
     }
@@ -22,7 +27,7 @@ fun SDSomeView(someView: SomeView) = when (someView.type) {
         SDLabeledImage(labeledImage = someView.someLabeledImage!!)
     }
     ViewType.container -> {
-        SDContainerView(containerView = someView.someContainer!!)
+        SDContainerView(containerView = someView.someContainer!!, navController = navController)
     }
     ViewType.custom -> {
         Text(text = "Will link to a custom")
@@ -31,7 +36,7 @@ fun SDSomeView(someView: SomeView) = when (someView.type) {
         Text(text = someView.someText!!.title)
     }
     ViewType.button -> {
-        SDButton(someButton = someView.someButton!!)
+        SDButton(someButton = someView.someButton!!, navController = navController)
     }
     ViewType.spacer -> {
         SDSpacer(someSpacer = someView.someSpacer!!)

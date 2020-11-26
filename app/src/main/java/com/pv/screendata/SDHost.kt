@@ -9,21 +9,23 @@ import com.pv.screendata.screens.SomeScreen
 @Composable
 fun SDHost(forScreen: SomeScreen) {
 
-    val navController = rememberNavController()
+    val nav = rememberNavController()
 
     NavHost(
-        navController = navController,
+        navController = nav,
         startDestination = "home"
     ) {
 
         composable("home") {
-            SDSCreen(screen = forScreen, navController = navController)
+            SDSCreen(screen = forScreen, navController = nav)
         }
 
         composable(
-            "someScreen/{serverData}"
+            "error"
         ) {
-            val screen = it.arguments?.getSerializable("serverData") as? SomeScreen
+//            val screen = it.arguments?.getSerializable("serverData") as? SomeScreen
+            SDSCreen(screen = MockScreens.error)
         }
     }
+    println()
 }

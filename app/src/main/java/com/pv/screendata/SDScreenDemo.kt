@@ -5,6 +5,7 @@ import androidx.compose.material.Text
 import androidx.compose.material.TopAppBar
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.graphics.Color
+import androidx.navigation.NavController
 import androidx.navigation.NavHostController
 import androidx.ui.tooling.preview.Preview
 import com.pv.screendata.screens.SomeScreen
@@ -12,7 +13,7 @@ import com.pv.screendata.screens.SomeScreen
 @Composable
 fun SDSCreen(
     screen: SomeScreen,
-    navController: NavHostController? = null // TODO:  Decide if nullable
+    navController: NavController? = null // TODO:  Decide if nullable
 ) {
     Scaffold(
         Modifier.fillMaxSize(),
@@ -27,7 +28,7 @@ fun SDSCreen(
             })
         },
     ) {
-        SDSomeView(someView = screen.someView)
+        SDSomeView(someView = screen.someView, navController = navController)
     }
 }
 

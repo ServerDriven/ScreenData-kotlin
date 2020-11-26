@@ -2,6 +2,7 @@ package com.pv.screendata
 
 import androidx.compose.runtime.Composable
 import androidx.ui.tooling.preview.Preview
+import com.google.gson.Gson
 import com.pv.screendata.extensions.SomeStyleHelper
 import com.pv.screendata.extensions.hexToSomeColor
 import com.pv.screendata.extensions.toSomeLabel
@@ -95,4 +96,6 @@ object MockScreens {
             )
         ).toSomeView()
     )
+
+    val jsonScreen = Gson().toJson(basic)
 }

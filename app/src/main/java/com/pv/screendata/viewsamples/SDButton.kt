@@ -3,7 +3,6 @@ package com.pv.screendata.viewsamples
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material.ButtonColors
 import androidx.compose.material.ButtonConstants
 import androidx.compose.material.Text
 import androidx.compose.material.TextButton
@@ -12,14 +11,21 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
+import androidx.navigation.NavController
+import androidx.navigation.compose.navigate
 import androidx.ui.tooling.preview.Preview
+import com.pv.screendata.MockScreens
 import com.pv.screendata.objects.SomeColor
 import com.pv.screendata.objects.SomeStyle
 import com.pv.screendata.toComposeColor
+import com.pv.screendata.types.DestinationType
 import com.pv.screendata.views.SomeButton
 
 @Composable
-fun SDButton(someButton: SomeButton) {
+fun SDButton(
+    someButton: SomeButton,
+    navController: NavController? = null
+) {
 
     val cbModifier = Modifier.fillMaxWidth() +
             Modifier.padding(
@@ -28,7 +34,25 @@ fun SDButton(someButton: SomeButton) {
             )
 
     TextButton(
-        onClick = {},
+        onClick = {
+
+            navController?.navigate(route = "error")
+
+            // TODO : Potentially move this part of the logic away, ie, singular navigation area ?
+            when (someButton.destination?.type) {
+                DestinationType.screen -> {
+                }
+                DestinationType.url -> {
+
+                }
+                DestinationType.deepLink -> {
+
+                }
+                null -> {
+
+                }
+            }
+        },
         cbModifier,
         shape = RoundedCornerShape(someButton.someStyle?.cornerRadius?.dp ?: 2.dp),
         colors = ButtonConstants.defaultButtonColors(
