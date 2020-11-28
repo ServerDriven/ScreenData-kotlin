@@ -14,7 +14,8 @@ import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import androidx.navigation.compose.navigate
 import androidx.ui.tooling.preview.Preview
-import com.pv.screendata.MockScreens
+import com.pv.screendata.R
+import com.pv.screendata.objects.Destination
 import com.pv.screendata.objects.SomeColor
 import com.pv.screendata.objects.SomeStyle
 import com.pv.screendata.toComposeColor
@@ -36,7 +37,11 @@ fun SDButton(
     TextButton(
         onClick = {
 
-            navController?.navigate(route = "error")
+            navController?.navigate(route = "error") {
+                anim {
+                    enter = R.anim.slide_in_right
+                }
+            }
 
             // TODO : Potentially move this part of the logic away, ie, singular navigation area ?
             when (someButton.destination?.type) {
@@ -80,8 +85,11 @@ object SDButton {
     val mock = SomeButton(
         id = null,
         actionId = null,
-        title = "clieck meh mmooo",
-        destination = null,
+        title = "clieck meh muahahaha",
+        destination = Destination(
+            toId = "error",
+            type = DestinationType.screen
+        ),
         someStyle = SomeStyle(
             backgroundColor = SomeColor(
                 1f,
@@ -100,4 +108,3 @@ object SDButton {
         )
     )
 }
-
