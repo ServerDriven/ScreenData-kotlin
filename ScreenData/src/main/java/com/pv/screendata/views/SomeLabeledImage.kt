@@ -5,12 +5,12 @@ import com.pv.screendata.objects.SomeStyle
 import com.pv.screendata.types.ViewType
 
 data class SomeLabeledImage(
-    val id: String?,
+    val id: String? = null,
     val title: String,
-    val subtitle: String?,
+    val subtitle: String? = null,
     val someImage: SomeImage,
-    val someStyle: SomeStyle?,
-    val destination: Destination?
+    val someStyle: SomeStyle? = null,
+    val destination: Destination? = null
 ) {
     val type: ViewType = ViewType.labeledImage
 }

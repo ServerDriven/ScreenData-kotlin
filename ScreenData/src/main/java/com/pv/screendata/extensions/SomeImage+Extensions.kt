@@ -6,11 +6,5 @@ import com.pv.screendata.views.SomeImage
 
 fun SomeImage.toSomeView(): SomeView = SomeView(
     type = ViewType.image,
-    someText = null,
-    someButton = null,
-    someContainer = null,
     someImage = this,
-    null,
-    null,
-    null
 )

@@ -5,6 +5,7 @@ import androidx.compose.foundation.Text
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Card
 import androidx.compose.runtime.Composable
@@ -19,7 +20,14 @@ import com.pv.screendata.views.SomeLabel
 
 @Composable
 fun SDLabel(label: SomeLabel) {
-    Column {
+
+    val labelModifier = Modifier.fillMaxWidth() +
+            Modifier.padding(
+                start = label.someStyle?.paddingStart?.dp ?: 0.dp,
+                end = label.someStyle?.paddingEnd?.dp ?: 0.dp
+            )
+
+    Column(modifier = labelModifier) {
         Text(
             text = label.title,
             fontSize = 16.sp

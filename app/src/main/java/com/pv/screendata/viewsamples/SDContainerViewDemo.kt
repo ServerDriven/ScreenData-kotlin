@@ -3,10 +3,13 @@ package com.pv.screendata.viewsamples
 import androidx.compose.foundation.ScrollableColumn
 import androidx.compose.foundation.ScrollableRow
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.padding
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.unit.dp
 import androidx.ui.tooling.preview.Preview
 import com.pv.screendata.SDSomeView
+import com.pv.screendata.extensions.SomeStyleHelper.paddingStyle
 import com.pv.screendata.extensions.toSomeView
 import com.pv.screendata.types.ViewDirectionAxis
 import com.pv.screendata.views.SomeContainerView
@@ -19,24 +22,32 @@ fun SDContainerView(containerView: SomeContainerView) {
         }
     }
 
+    val cvModifier = Modifier.fillMaxWidth() +
+            Modifier.padding(
+                start = containerView.someStyle?.paddingStart?.dp ?: 0.dp,
+                end = containerView.someStyle?.paddingEnd?.dp ?: 0.dp
+            )
+
     when (containerView.axis) {
         ViewDirectionAxis.horizontal -> ScrollableRow(
-            modifier = Modifier.fillMaxWidth(),
+            modifier = cvModifier,
         ) {
             content()
         }
         ViewDirectionAxis.vertical -> ScrollableColumn(
-            modifier = Modifier.fillMaxWidth(),
+            modifier = cvModifier,
         ) {
             content()
         }
     }
 }
 
-@Preview
+@Preview(showBackground = true)
 @Composable
 fun sdContainerViewPreview() {
-    SDContainerView(containerView = SDContainerViewDemo.containerMock(ViewDirectionAxis.vertical))
+    SDContainerView(
+        containerView = SDContainerViewDemo.containerMock(ViewDirectionAxis.vertical)
+    )
 }
 
 object SDContainerViewDemo {
@@ -50,7 +61,7 @@ object SDContainerViewDemo {
                 SDLabel.mock.toSomeView(),
                 SDLabel.mock.toSomeView()
             ),
-            someStyle = null
+            someStyle = paddingStyle(start = 4, end = 4)
         )
     }
 }

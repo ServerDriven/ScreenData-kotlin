@@ -7,5 +7,6 @@ enum class ViewType {
     image,
     labeledImage,
     container,
-    custom
+    custom,
+    spacer
 }

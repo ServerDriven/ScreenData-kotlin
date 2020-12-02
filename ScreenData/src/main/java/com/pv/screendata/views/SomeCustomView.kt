@@ -7,12 +7,12 @@ import com.pv.screendata.types.ViewDirectionAxis
 import com.pv.screendata.types.ViewType
 
 data class SomeCustomView(
-    val id: String?,
+    val id: String? = null,
     val title: String,
-    val subtitle: String?,
-    val someStyle: SomeStyle?,
-    val someImage: SomeImage?,
-    val destination: Destination?,
+    val subtitle: String? = null,
+    val someStyle: SomeStyle? = null,
+    val someImage: SomeImage? = null,
+    val destination: Destination? = null,
     val axis: ViewDirectionAxis,
     val someViews: Array<SomeView>
 ) {
