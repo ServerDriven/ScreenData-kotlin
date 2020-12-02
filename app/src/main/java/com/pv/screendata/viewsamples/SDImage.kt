@@ -23,7 +23,7 @@ fun SDImage(image: SomeImage) {
             )
 
     Image(
-        asset = imageResource(id = R.drawable.sample_image),
+        asset = imageResource(id = R.drawable.ic_launcher_background),
         modifier = iModifier
     )
 }
