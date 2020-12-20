@@ -14,7 +14,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            SDScreenDemo.mock()
+            SDSCreen(screen = SDScreenDemo.mock2)
         }
     }
 }

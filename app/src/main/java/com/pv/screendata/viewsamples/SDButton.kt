@@ -14,6 +14,7 @@ import androidx.ui.tooling.preview.Preview
 import com.pv.screendata.objects.SomeColor
 import com.pv.screendata.objects.SomeStyle
 import com.pv.screendata.toComposeColor
+import com.pv.screendata.types.Alignment
 import com.pv.screendata.views.SomeButton
 
 @Composable
@@ -68,7 +69,8 @@ object SDButton {
                 1f
             ),
             isHidden = false,
-            cornerRadius = 4
+            cornerRadius = 4,
+            alignment = Alignment.center
         )
     )
 }

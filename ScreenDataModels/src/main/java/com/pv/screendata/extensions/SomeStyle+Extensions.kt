@@ -1,6 +1,7 @@
 package com.pv.screendata.extensions
 
 import com.pv.screendata.objects.SomeStyle
+import com.pv.screendata.types.Alignment
 
 object SomeStyleHelper {
 
@@ -8,6 +9,7 @@ object SomeStyleHelper {
         isHidden = false,
         paddingStart = start,
         paddingEnd = end,
-        cornerRadius = 0
+        cornerRadius = 0,
+        alignment = Alignment.start
     )
 }

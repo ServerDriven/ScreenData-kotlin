@@ -2,6 +2,7 @@ package com.pv.screendata.viewsamples
 
 import androidx.compose.foundation.ScrollableColumn
 import androidx.compose.foundation.ScrollableRow
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.runtime.Composable
@@ -11,6 +12,9 @@ import androidx.ui.tooling.preview.Preview
 import com.pv.screendata.SDSomeView
 import com.pv.screendata.extensions.SomeStyleHelper.paddingStyle
 import com.pv.screendata.extensions.toSomeView
+import com.pv.screendata.objects.SomeColor
+import com.pv.screendata.objects.SomeStyle
+import com.pv.screendata.types.Alignment
 import com.pv.screendata.types.ViewDirectionAxis
 import com.pv.screendata.views.SomeContainerView
 
@@ -57,7 +61,18 @@ object SDContainerViewDemo {
             id = "someContainerId",
             axis = axis,
             someViews = arrayOf(
-                SDLabel.mock.toSomeView(),
+                SDLabel
+                    .mock
+                    .copy(
+                        someStyle = SomeStyle(
+                            null,
+                            SomeColor(0f, 0f, 0f, 1f),
+                            false,
+                            0,
+                            alignment = Alignment.center
+                        )
+                    )
+                    .toSomeView(),
                 SDLabel.mock.toSomeView(),
                 SDLabel.mock.toSomeView()
             ),
