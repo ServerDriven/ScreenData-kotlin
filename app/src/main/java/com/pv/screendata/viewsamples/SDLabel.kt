@@ -1,7 +1,7 @@
 package com.pv.screendata.viewsamples
 
 import androidx.compose.foundation.BorderStroke
-import androidx.compose.foundation.Text
+import androidx.compose.material.Text
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -16,7 +16,7 @@ import androidx.compose.ui.graphics.Shape
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import androidx.ui.tooling.preview.Preview
+import androidx.compose.ui.tooling.preview.Preview
 import com.pv.screendata.toComposeColor
 import com.pv.screendata.ui.shapes
 import com.pv.screendata.views.SomeLabel
@@ -24,11 +24,12 @@ import com.pv.screendata.views.SomeLabel
 @Composable
 fun SDLabel(label: SomeLabel) {
 
-    val labelModifier = Modifier.fillMaxWidth() +
-            Modifier.padding(
-                start = label.someStyle?.paddingStart?.dp ?: 0.dp,
-                end = label.someStyle?.paddingEnd?.dp ?: 0.dp
-            )
+    val labelModifier = Modifier.fillMaxWidth().then(
+        Modifier.padding(
+            start = label.someStyle?.paddingStart?.dp ?: 0.dp,
+            end = label.someStyle?.paddingEnd?.dp ?: 0.dp
+        )
+    )
 
     val textColor = label.someStyle?.foregroundColor?.toComposeColor() ?: Color.White
 
