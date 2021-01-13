@@ -11,6 +11,8 @@ import com.pv.screendata.ui.ScreenDataTheme
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        SomeStoreHolder.store = StoreDemo.mockStore
         setContent {
             SDSCreen(screen = SDScreenDemo.mock2)
         }
