@@ -1,21 +1,25 @@
 package com.pv.screendata
 
-import androidx.compose.foundation.Text
+import androidx.compose.material.Text
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material.Scaffold
 import androidx.compose.material.TopAppBar
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
-import androidx.ui.tooling.preview.Preview
+import androidx.compose.ui.tooling.preview.Preview
 import com.pv.screendata.extensions.SomeStyleHelper.paddingStyle
 import com.pv.screendata.extensions.toSomeLabel
 import com.pv.screendata.extensions.toSomeView
 import com.pv.screendata.objects.SomeStyle
+import com.pv.screendata.objects.SomeView
 import com.pv.screendata.objects.SomeColor as SomeColor
 import com.pv.screendata.screens.SomeScreen
+import com.pv.screendata.types.Alignment
 import com.pv.screendata.types.ViewDirectionAxis
+import com.pv.screendata.types.ViewType
 import com.pv.screendata.views.SomeContainerView
+import com.pv.screendata.views.SomeImage
 import com.pv.screendata.views.SomeSpacer
 import com.pv.screendata.viewsamples.SDButton
 import com.pv.screendata.viewsamples.SDImage
@@ -30,9 +34,15 @@ fun SDSCreen(screen: SomeScreen) {
             screen.backgroundColor.blue
         ),
         topBar = {
-            TopAppBar(title = {
-                Text(screen.title)
-            })
+            TopAppBar(
+                title = {
+                    Text(
+                        screen.title,
+                        color = Color.White
+                    )
+                },
+                backgroundColor = screen.toolbarColor.toComposeColor()
+            )
         },
     ) {
         SDSomeView(someView = screen.someView)
@@ -42,7 +52,7 @@ fun SDSCreen(screen: SomeScreen) {
 @Preview(showBackground = true)
 @Composable
 fun sdScreenPreview() {
-    SDScreenDemo.mock()
+    SDScreenDemo.mock2
 }
 
 object SDScreenDemo {
@@ -95,7 +105,8 @@ object SDScreenDemo {
                                 isHidden = false,
                                 cornerRadius = 4,
                                 paddingStart = 8,
-                                paddingEnd = 8
+                                paddingEnd = 8,
+                                alignment = Alignment.center
                             )
                         )
                         .toSomeView()
@@ -103,6 +114,36 @@ object SDScreenDemo {
                 someStyle = null
             ).toSomeView(),
             footerView = null
+        )
+    )
+
+    val mock2 = SomeScreen(
+        title = "Welcome",
+        backgroundColor = SomeColor(
+            0f,
+            0f,
+            0f,
+            1f
+        ),
+        someView = SomeView(
+            type = ViewType.container,
+            someContainer = SomeContainerView(
+                axis = ViewDirectionAxis.vertical,
+                someViews = arrayOf(
+                    SomeView(
+                        type = ViewType.image,
+                        someImage = SomeImage(url = "monkawW")
+                    ),
+                    "Tours".toSomeLabel(
+                        withColor = SomeColor(
+                            102f / 255f,
+                            187f / 255f,
+                            106f / 255f,
+                            .1f
+                        )
+                    ).toSomeView(),
+                ),
+            )
         )
     )
 }
