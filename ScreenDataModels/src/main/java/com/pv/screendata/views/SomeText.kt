@@ -7,6 +7,7 @@ data class SomeText(
     val id: String? = null,
     val title: String,
     val style: SomeStyle,
+    val fontSize: Int // currently passing direct sp size.
 ) {
     val type: ViewType = ViewType.text
 }
