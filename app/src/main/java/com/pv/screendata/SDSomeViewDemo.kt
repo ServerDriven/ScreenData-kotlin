@@ -1,5 +1,6 @@
 package com.pv.screendata
 
+import android.util.Log
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.tooling.preview.Preview
@@ -11,30 +12,33 @@ import com.pv.screendata.viewsamples.*
 // Todo : find safe fallback on those labels
 
 @Composable
-fun SDSomeView(someView: SomeView) = when (someView.type) {
-    ViewType.label -> {
-        SDLabel(label = someView.someLabel!!)
-    }
-    ViewType.image -> {
-        SDImage(image = someView.someImage!!)
-    }
-    ViewType.labeledImage -> {
-        SDLabeledImage(labeledImage = someView.someLabeledImage!!)
-    }
-    ViewType.container -> {
-        SDContainerView(containerView = someView.someContainer!!)
-    }
-    ViewType.custom -> {
-        Text(text = "Will link to a custom")
-    }
-    ViewType.text -> {
-        Text(text = someView.someText!!.title)
-    }
-    ViewType.button -> {
-        SDButton(someButton = someView.someButton!!)
-    }
-    ViewType.spacer -> {
-        SDSpacer(someSpacer = someView.someSpacer!!)
+fun SDSomeView(someView: SomeView) {
+    Log.d("pv", "we maini")
+    when (someView.type) {
+        ViewType.label -> {
+            SDLabel(label = someView.someLabel!!)
+        }
+        ViewType.image -> {
+            SDImage(image = someView.someImage!!)
+        }
+        ViewType.labeledImage -> {
+            SDLabeledImage(labeledImage = someView.someLabeledImage!!)
+        }
+        ViewType.container -> {
+            SDContainerView(containerView = someView.someContainer!!)
+        }
+        ViewType.custom -> {
+            SomeStoreHolder.store?.customViews?.get(someView.someCustomView?.id)?.invoke()
+        }
+        ViewType.text -> {
+            Text(text = someView.someText!!.title)
+        }
+        ViewType.button -> {
+            SDButton(someButton = someView.someButton!!)
+        }
+        ViewType.spacer -> {
+            SDSpacer(someSpacer = someView.someSpacer!!)
+        }
     }
 }
 

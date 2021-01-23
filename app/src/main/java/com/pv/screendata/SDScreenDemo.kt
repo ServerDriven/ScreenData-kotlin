@@ -19,6 +19,7 @@ import com.pv.screendata.types.Alignment
 import com.pv.screendata.types.ViewDirectionAxis
 import com.pv.screendata.types.ViewType
 import com.pv.screendata.views.SomeContainerView
+import com.pv.screendata.views.SomeCustomView
 import com.pv.screendata.views.SomeImage
 import com.pv.screendata.views.SomeSpacer
 import com.pv.screendata.viewsamples.SDButton
@@ -142,6 +143,10 @@ object SDScreenDemo {
                             .1f
                         )
                     ).toSomeView(),
+                    "pogU".toSomeLabel().toSomeView(),
+                    SomeCustomView(
+                        id = "pogthisisacustomview"
+                    ).toSomeView()
                 ),
             )
         )
