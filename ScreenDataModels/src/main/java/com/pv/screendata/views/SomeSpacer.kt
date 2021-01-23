@@ -6,7 +6,8 @@ import com.pv.screendata.types.ViewType
 data class SomeSpacer(
     val height: Int,
     val width: Int,
-    val color: SomeColor
+    val shouldMaxWidth: Boolean = true,
+    val color: SomeColor? = null
 ) {
     val type = ViewType.spacer
 }
