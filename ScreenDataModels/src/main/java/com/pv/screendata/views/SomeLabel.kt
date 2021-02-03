@@ -4,6 +4,7 @@ import com.pv.screendata.objects.Destination
 import com.pv.screendata.objects.SomeStyle
 import com.pv.screendata.types.ViewType
 
+// likely can defer to [SomeText.kt]
 data class SomeLabel(
     val id: String? = null,
     val title: String,

@@ -10,7 +10,7 @@ data class SomeButton(
     val actionId: String? = null,
     val title: String,
     val destination: Destination? = null,
-    val someStyle: SomeStyle? = null
+    val someStyle: SomeStyle
 ) {
     val type: ViewType = ViewType.button
 }

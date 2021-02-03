@@ -6,7 +6,7 @@ data class SomeStyle(
     val backgroundColor: SomeColor? = null,
     val foregroundColor: SomeColor? = null,
     val isHidden: Boolean = false,
-    val cornerRadius: Int,
+    val cornerRadius: Int = 0,
     val paddingStart: Int = 0,
     val paddingEnd: Int = 0,
     val height: Int? = null,
