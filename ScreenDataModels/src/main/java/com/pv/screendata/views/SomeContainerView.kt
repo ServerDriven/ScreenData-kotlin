@@ -8,7 +8,7 @@ import com.pv.screendata.types.ViewType
 data class SomeContainerView(
     val id: String? = null,
     val axis: ViewDirectionAxis,
-    val someViews: List<SomeView>,
+    val views: List<SomeView>,
     val someStyle: SomeStyle? = null
 ) {
     val type: ViewType = ViewType.container

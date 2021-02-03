@@ -7,9 +7,6 @@ data class SomeStyle(
     val foregroundColor: SomeColor? = null,
     val isHidden: Boolean = false,
     val cornerRadius: Int = 0,
-    val paddingStart: Int = 0,
-    val paddingEnd: Int = 0,
-    val height: Int? = null,
-    val width: Int? = null,
+    val padding: Int = 0,
     val alignment: Alignment
 )

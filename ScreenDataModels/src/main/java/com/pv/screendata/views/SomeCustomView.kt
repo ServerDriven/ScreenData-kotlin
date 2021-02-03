@@ -14,7 +14,7 @@ data class SomeCustomView(
     val someImage: SomeImage? = null,
     val destination: Destination? = null,
     val axis: ViewDirectionAxis? = null,
-    val someViews: List<SomeView>? = null
+    val views: List<SomeView>? = null
 ) {
     val type: ViewType = ViewType.custom
 }
