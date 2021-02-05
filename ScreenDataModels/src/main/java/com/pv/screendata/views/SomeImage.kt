@@ -7,7 +7,7 @@ import com.pv.screendata.types.ViewType
 data class SomeImage(
     val id: String? = null,
     val url: String,
-    val someStyle: SomeStyle? = null,
+    val style: SomeStyle? = null,
     val destination: Destination? = null,
 
     val idRes: Int? = null // idRes temporary

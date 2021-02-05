@@ -10,7 +10,7 @@ data class SomeCustomView(
     val id: String, // not sure if it needs to be null entirely.
     val title: String? = null,
     val subtitle: String? = null,
-    val someStyle: SomeStyle? = null,
+    val style: SomeStyle? = null,
     val someImage: SomeImage? = null,
     val destination: Destination? = null,
     val axis: ViewDirectionAxis? = null,

@@ -10,7 +10,7 @@ data class SomeLabel(
     val id: String? = null,
     val title: String,
     val subtitle: String? = null,
-    val someStyle: SomeStyle? = null,
+    val style: SomeStyle? = null,
     val destination: Destination? = null,
     val font: FontType
 // add font
