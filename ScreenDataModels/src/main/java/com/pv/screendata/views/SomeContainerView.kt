@@ -9,7 +9,7 @@ data class SomeContainerView(
     val id: String? = null,
     val axis: ViewDirectionAxis,
     val views: List<SomeView>,
-    val someStyle: SomeStyle? = null
+    val style: SomeStyle? = null
 ) {
     val type: ViewType = ViewType.container
 }
