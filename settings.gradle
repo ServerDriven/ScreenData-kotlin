@@ -1,4 +1,3 @@
 rootProject.name = "ScreenData"
 include ':app'
 include ':ScreenDataModels'
-include ':tests'
