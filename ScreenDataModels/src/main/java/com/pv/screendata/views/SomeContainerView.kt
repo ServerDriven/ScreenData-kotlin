@@ -9,7 +9,8 @@ data class SomeContainerView(
     val id: String? = null,
     val axis: ViewDirectionAxis,
     val views: List<SomeView>,
-    val style: SomeStyle? = null
+    val style: SomeStyle? = null,
+    val isScrollable: Boolean = true
 ) {
     val type: ViewType = ViewType.container
 }
