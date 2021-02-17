@@ -11,7 +11,6 @@ data class SomeView(
     val someContainer: SomeContainerView? = null,
     val someImage: SomeImage? = null,
     val someLabel: SomeLabel? = null,
-    val someLabeledImage: SomeLabeledImage? = null,
     val someCustomView: SomeCustomView? = null,
     val someSpacer: SomeSpacer? = null
 )
