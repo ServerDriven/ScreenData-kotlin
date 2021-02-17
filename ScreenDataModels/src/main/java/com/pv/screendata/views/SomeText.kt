@@ -6,8 +6,7 @@ import com.pv.screendata.types.ViewType
 data class SomeText(
     val id: String? = null,
     val title: String,
-    val style: SomeStyle,
-    val fontSize: Int // currently passing direct sp size.
+    val style: SomeStyle? = null // might be nnullable
 ) {
     val type: ViewType = ViewType.text
 }

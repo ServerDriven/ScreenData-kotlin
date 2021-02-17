@@ -8,8 +8,9 @@ import com.pv.screendata.types.ViewType
 data class SomeContainerView(
     val id: String? = null,
     val axis: ViewDirectionAxis,
-    val someViews: List<SomeView>,
-    val someStyle: SomeStyle? = null
+    val views: List<SomeView>,
+    val style: SomeStyle? = null,
+    val isScrollable: Boolean = true
 ) {
     val type: ViewType = ViewType.container
 }
