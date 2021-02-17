@@ -5,7 +5,6 @@ enum class ViewType {
     button,
     label,
     image,
-    labeledImage,
     container,
     custom,
     spacer
