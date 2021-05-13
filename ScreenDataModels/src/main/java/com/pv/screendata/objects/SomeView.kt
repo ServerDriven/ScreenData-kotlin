@@ -2,7 +2,9 @@ package com.pv.screendata.objects
 
 import com.pv.screendata.types.ViewType
 import com.pv.screendata.views.*
+import kotlinx.serialization.Serializable
 
+@Serializable
 data class SomeView(
     val type: ViewType,
 

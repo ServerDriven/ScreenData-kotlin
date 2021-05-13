@@ -4,8 +4,9 @@ import com.pv.screendata.objects.Destination
 import com.pv.screendata.objects.SomeStyle
 import com.pv.screendata.types.FontType
 import com.pv.screendata.types.ViewType
+import kotlinx.serialization.Serializable
 
-// likely can defer to [SomeText.kt]
+@Serializable
 data class SomeLabel(
     val id: String? = null,
     val title: String,
