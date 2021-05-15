@@ -10,6 +10,7 @@ import kotlinx.serialization.Serializable
 data class SomeImage(
     val id: String? = null,
     val url: String,
+    val assetName: String? = null,
     val aspectScale: ImageAspectScale,
     val style: SomeStyle? = null,
     val destination: Destination? = null,
