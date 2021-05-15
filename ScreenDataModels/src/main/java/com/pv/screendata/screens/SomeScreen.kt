@@ -3,9 +3,9 @@ package com.pv.screendata.screens
 import com.pv.screendata.objects.SomeColor
 import com.pv.screendata.objects.SomeStyle
 import com.pv.screendata.objects.SomeView
+import kotlinx.serialization.Serializable
 
-// should view just be container view ? What screen would have a label ?
-
+@Serializable
 data class SomeScreen(
     val id: String? = null,
     val title: String,

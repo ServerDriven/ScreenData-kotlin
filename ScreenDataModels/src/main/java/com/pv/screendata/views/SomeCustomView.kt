@@ -5,7 +5,9 @@ import com.pv.screendata.objects.SomeView
 import com.pv.screendata.objects.SomeStyle
 import com.pv.screendata.types.ViewDirectionAxis
 import com.pv.screendata.types.ViewType
+import kotlinx.serialization.Serializable
 
+@Serializable
 data class SomeCustomView(
     val id: String, // not sure if it needs to be null entirely.
     val title: String? = null,

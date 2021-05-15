@@ -1,5 +1,8 @@
 package com.pv.screendata.objects
 
+import kotlinx.serialization.Serializable
+
+@Serializable
 data class SomeStyle(
     val backgroundColor: SomeColor? = null,
     val foregroundColor: SomeColor? = null,
